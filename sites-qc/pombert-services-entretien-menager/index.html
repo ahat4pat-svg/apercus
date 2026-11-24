@@ -41,10 +41,25 @@
   .contact .line span { display:inline-block; min-width:5.5rem; color:var(--muted); font-family:"Avenir Next","Segoe UI",sans-serif; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.08em; }
   footer { border-top:1px solid color-mix(in srgb, var(--ink) 12%, transparent); padding:28px 0 48px; font-size:0.88rem; color:var(--muted); }
   .preview-note { background:color-mix(in srgb, var(--accent) 12%, var(--paper)); border-left:3px solid var(--accent); padding:12px 14px; margin:0 0 18px; }
-  @media (max-width:700px) { header nav { display:none; } .hero { min-height:62vh; } }
+  .preview-banner { background:var(--ink); color:var(--paper); font-family:"Avenir Next","Segoe UI",sans-serif; font-size:0.85rem; padding:9px 0; }
+  .preview-banner .wrap { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .btn { min-height:44px; padding:14px 20px; display:inline-flex; align-items:center; }
+  header .tel { min-height:44px; display:inline-flex; align-items:center; }
+  .btn-reply { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 16px; border-radius:2px; text-decoration:none; background:var(--accent); color:#fff; font-family:"Avenir Next","Segoe UI",sans-serif; letter-spacing:0.03em; font-size:0.92rem; }
+  .preview-note .btn-reply { margin-top:12px; }
+  .preview-banner .btn-reply { min-height:36px; padding:6px 12px; background:transparent; color:var(--paper); border:1px solid color-mix(in srgb, var(--paper) 55%, transparent); }
+  @media (max-width:700px) {
+    header.top { flex-wrap:wrap; gap:10px 16px; padding:12px 0; }
+    header nav { display:flex; flex-wrap:wrap; gap:10px 14px; }
+    .hero { min-height:58vh; }
+    .hero-inner { padding:40px 0 36px; }
+    .services, .area, .contact, .work { padding:44px 0; }
+    .gallery img { height:200px; }
+  }
 </style>
 </head>
 <body>
+  <div class="preview-banner"><div class="wrap"><span>Aperçu gratuit — ce n'est pas le site officiel</span><a class="btn-reply" href="mailto:cabinet-patrick@mail.grokbot.com?subject=Au%20sujet%20de%20l%27aper%C3%A7u%20pour%20Pombert%20Services%20Entretien%20M%C3%A9nager">Écrire à Patrick — un oui ou un non suffit</a></div></div>
   <div class="wrap">
     <header class="top">
       <div class="brand">Pombert Services Entretien Ménager</div>
@@ -69,9 +84,9 @@
   </section>
   <div class="bar"><div class="wrap">Au service de Louiseville, Québec et des alentours</div></div>
   <section class="services" id="services"><div class="wrap"><h2>Services</h2><div class="grid"><article><h3>Ménage régulier</h3><p>Cuisine, salles de bain, planchers, le travail de la semaine.</p></article><article><h3>Grands ménages</h3><p>Fours, plinthes, et les coins qu’on laisse aller.</p></article><article><h3>Entrée et sortie de logement</h3><p>Un ménage complet quand la maison change de mains.</p></article><article><h3>Vitres et extérieur</h3><p>Là où c’est possible de le faire proprement.</p></article></div></div></section>
-  <section class="work" id="work"><div class="wrap"><h2>Le genre d'endroit que ce travail concerne</h2><div class="gallery"><figure><img src="../../images/shared/suburban-home.jpg" alt="Homes that are ready to be lived in" width="1200" height="800"><figcaption>Homes that are ready to be lived in</figcaption></figure><figure><img src="../../images/cleaner/mop-cloths.jpg" alt="Everyday house cleaning" width="1200" height="800"><figcaption>Everyday house cleaning</figcaption></figure><figure><img src="../../images/cleaner/ladder-windows.jpg" alt="Exterior work and hard-to-reach places" width="1200" height="800"><figcaption>Exterior work and hard-to-reach places</figcaption></figure></div></div></section>
+  <section class="work" id="work"><div class="wrap"><h2>Le genre d'endroit que ce travail concerne</h2><div class="gallery"><figure><img src="../../images/shared/suburban-home.jpg" alt="Des maisons prêtes à habiter" width="1200" height="800"><figcaption>Des maisons prêtes à habiter</figcaption></figure><figure><img src="../../images/cleaner/mop-cloths.jpg" alt="Entretien ménager du quotidien" width="1200" height="800"><figcaption>Entretien ménager du quotidien</figcaption></figure><figure><img src="../../images/cleaner/ladder-windows.jpg" alt="Travaux extérieurs et endroits hauts" width="1200" height="800"><figcaption>Travaux extérieurs et endroits hauts</figcaption></figure></div></div></section>
   <section class="area" id="area"><div class="wrap"><h2>Secteur</h2><p>Pombert Services Entretien Ménager est établi autour de Louiseville, Québec. Cet aperçu s'adresse aux gens du secteur. Si vous couvrez déjà plus large, on peut l'ajouter à la page.</p><p>220, rue Saint-Aimé, Louiseville (Qc) J5V 2B1</p></div></section>
   <section class="contact" id="contact"><div class="wrap"><h2>Pour nous joindre</h2><p class='line'><span>Téléphone</span> <a class="tel" href="tel:8199449196">(819) 944-9196</a></p><p class='line'><span>Courriel</span> <a href='mailto:entretienpombert@hotmail.com'>entretienpombert@hotmail.com</a></p><p class='line'><span>Adresse</span> 220, rue Saint-Aimé, Louiseville (Qc) J5V 2B1</p><p class='line'><span>Secteur</span> Louiseville, Québec et les alentours</p></div></section>
-  <footer><div class="wrap"><p class="preview-note">Ceci est un aperçu gratuit, non publié, d'une petite page préparée pour Pombert Services Entretien Ménager par Patrick Lemieux. Elle n'est pas en ligne. Si vous ne voulez pas d'autre message à ce sujet, dites simplement non — ça suffit. cabinet-patrick@mail.grokbot.com</p><p>© Pombert Services Entretien Ménager. Aperçu seulement. Les photos viennent de Pixabay (licence libre) et servent de substituts : ce ne sont pas des photos des chantiers ou du commerce lui-même.</p></div></footer>
+  <footer><div class="wrap"><div class="preview-note"><p>Ceci est un aperçu gratuit d'une petite page préparée pour Pombert Services Entretien Ménager par Patrick Lemieux. Ce n'est pas le site officiel. Si ça vous va, écrivez-moi ; sinon, un non suffit.</p><a class="btn-reply" href="mailto:cabinet-patrick@mail.grokbot.com?subject=Au%20sujet%20de%20l%27aper%C3%A7u%20pour%20Pombert%20Services%20Entretien%20M%C3%A9nager">Écrire à Patrick — un oui ou un non suffit</a></div><p>© Pombert Services Entretien Ménager. Aperçu seulement. Les photos viennent de Pixabay (licence libre) et servent de substituts : ce ne sont pas des photos des chantiers ou du commerce lui-même.</p></div></footer>
 </body>
 </html>

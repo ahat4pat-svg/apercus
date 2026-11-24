@@ -41,10 +41,25 @@
   .contact .line span { display:inline-block; min-width:5.5rem; color:var(--muted); font-family:"Avenir Next","Segoe UI",sans-serif; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.08em; }
   footer { border-top:1px solid color-mix(in srgb, var(--ink) 12%, transparent); padding:28px 0 48px; font-size:0.88rem; color:var(--muted); }
   .preview-note { background:color-mix(in srgb, var(--accent) 12%, var(--paper)); border-left:3px solid var(--accent); padding:12px 14px; margin:0 0 18px; }
-  @media (max-width:700px) { header nav { display:none; } .hero { min-height:62vh; } }
+  .preview-banner { background:var(--ink); color:var(--paper); font-family:"Avenir Next","Segoe UI",sans-serif; font-size:0.85rem; padding:9px 0; }
+  .preview-banner .wrap { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .btn { min-height:44px; padding:14px 20px; display:inline-flex; align-items:center; }
+  header .tel { min-height:44px; display:inline-flex; align-items:center; }
+  .btn-reply { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 16px; border-radius:2px; text-decoration:none; background:var(--accent); color:#fff; font-family:"Avenir Next","Segoe UI",sans-serif; letter-spacing:0.03em; font-size:0.92rem; }
+  .preview-note .btn-reply { margin-top:12px; }
+  .preview-banner .btn-reply { min-height:36px; padding:6px 12px; background:transparent; color:var(--paper); border:1px solid color-mix(in srgb, var(--paper) 55%, transparent); }
+  @media (max-width:700px) {
+    header.top { flex-wrap:wrap; gap:10px 16px; padding:12px 0; }
+    header nav { display:flex; flex-wrap:wrap; gap:10px 14px; }
+    .hero { min-height:58vh; }
+    .hero-inner { padding:40px 0 36px; }
+    .services, .area, .contact, .work { padding:44px 0; }
+    .gallery img { height:200px; }
+  }
 </style>
 </head>
 <body>
+  <div class="preview-banner"><div class="wrap"><span>Free preview — not the official website</span><a class="btn-reply" href="mailto:cabinet-patrick@mail.grokbot.com?subject=About%20the%20preview%20for%20Dynamic%20Home%20%26%20Lawn%20Center">Reply to Patrick — a yes or no is enough</a></div></div>
   <div class="wrap">
     <header class="top">
       <div class="brand">Dynamic Home &amp; Lawn Center</div>
@@ -72,6 +87,6 @@
   <section class="work" id="work"><div class="wrap"><h2>The kind of place this work is for</h2><div class="gallery"><figure><img src="../../images/landscaper/suburban-yard.jpg" alt="A well-kept suburban yard" width="1200" height="800"><figcaption>A well-kept suburban yard</figcaption></figure><figure><img src="../../images/landscaper/garden-path.jpg" alt="Paths, beds and planting" width="1200" height="800"><figcaption>Paths, beds and planting</figcaption></figure><figure><img src="../../images/shared/suburban-home.jpg" alt="Homes and frontages in the area" width="1200" height="800"><figcaption>Homes and frontages in the area</figcaption></figure></div></div></section>
   <section class="area" id="area"><div class="wrap"><h2>Service area</h2><p>Dynamic Home &amp; Lawn Center is based around Holdenville, OK. This preview is written for people nearby. If you already cover a wider area, that can be added on the page.</p><p>103 E. Main</p></div></section>
   <section class="contact" id="contact"><div class="wrap"><h2>Get in touch</h2><p class='line'><span>Phone</span> <a class="tel" href="tel:4053795263">(405) 379-5263</a></p><p class='line'><span>Email</span> <a href='mailto:diannavoigt0527@gmail.com'>diannavoigt0527@gmail.com</a></p><p class='line'><span>Address</span> 103 E. Main</p><p class='line'><span>Area</span> Holdenville, OK and nearby communities</p></div></section>
-  <footer><div class="wrap"><p class="preview-note">This is a free, unpublished preview of a simple website prepared for Dynamic Home &amp; Lawn Center by Patrick Lemieux. It is not live on the internet. If you would rather not receive another note about it, just say no — that is enough. cabinet-patrick@mail.grokbot.com</p><p>© Dynamic Home &amp; Lawn Center. Preview only. Photographs are from Pixabay (free license) and are placeholders, not photographs of this company's own jobs.</p></div></footer>
+  <footer><div class="wrap"><div class="preview-note"><p>This is a free preview of a simple website prepared for Dynamic Home &amp; Lawn Center by Patrick Lemieux. It is not the official website. If it is useful, write back; if not, just say no — that is enough.</p><a class="btn-reply" href="mailto:cabinet-patrick@mail.grokbot.com?subject=About%20the%20preview%20for%20Dynamic%20Home%20%26%20Lawn%20Center">Reply to Patrick — a yes or no is enough</a></div><p>© Dynamic Home &amp; Lawn Center. Preview only. Photographs are from Pixabay (free license) and are placeholders, not photographs of this company's own jobs.</p></div></footer>
 </body>
 </html>

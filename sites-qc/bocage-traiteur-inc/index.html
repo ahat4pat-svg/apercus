@@ -41,10 +41,25 @@
   .contact .line span { display:inline-block; min-width:5.5rem; color:var(--muted); font-family:"Avenir Next","Segoe UI",sans-serif; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.08em; }
   footer { border-top:1px solid color-mix(in srgb, var(--ink) 12%, transparent); padding:28px 0 48px; font-size:0.88rem; color:var(--muted); }
   .preview-note { background:color-mix(in srgb, var(--accent) 12%, var(--paper)); border-left:3px solid var(--accent); padding:12px 14px; margin:0 0 18px; }
-  @media (max-width:700px) { header nav { display:none; } .hero { min-height:62vh; } }
+  .preview-banner { background:var(--ink); color:var(--paper); font-family:"Avenir Next","Segoe UI",sans-serif; font-size:0.85rem; padding:9px 0; }
+  .preview-banner .wrap { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .btn { min-height:44px; padding:14px 20px; display:inline-flex; align-items:center; }
+  header .tel { min-height:44px; display:inline-flex; align-items:center; }
+  .btn-reply { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 16px; border-radius:2px; text-decoration:none; background:var(--accent); color:#fff; font-family:"Avenir Next","Segoe UI",sans-serif; letter-spacing:0.03em; font-size:0.92rem; }
+  .preview-note .btn-reply { margin-top:12px; }
+  .preview-banner .btn-reply { min-height:36px; padding:6px 12px; background:transparent; color:var(--paper); border:1px solid color-mix(in srgb, var(--paper) 55%, transparent); }
+  @media (max-width:700px) {
+    header.top { flex-wrap:wrap; gap:10px 16px; padding:12px 0; }
+    header nav { display:flex; flex-wrap:wrap; gap:10px 14px; }
+    .hero { min-height:58vh; }
+    .hero-inner { padding:40px 0 36px; }
+    .services, .area, .contact, .work { padding:44px 0; }
+    .gallery img { height:200px; }
+  }
 </style>
 </head>
 <body>
+  <div class="preview-banner"><div class="wrap"><span>Aperçu gratuit — ce n'est pas le site officiel</span><a class="btn-reply" href="mailto:cabinet-patrick@mail.grokbot.com?subject=Au%20sujet%20de%20l%27aper%C3%A7u%20pour%20Bocage%20Traiteur%20inc.">Écrire à Patrick — un oui ou un non suffit</a></div></div>
   <div class="wrap">
     <header class="top">
       <div class="brand">Bocage Traiteur inc.</div>
@@ -69,9 +84,9 @@
   </section>
   <div class="bar"><div class="wrap">Au service de Trois-Rivières, Québec et des alentours</div></div>
   <section class="services" id="services"><div class="wrap"><h2>Services</h2><div class="grid"><article><h3>La table</h3><p>Un endroit simple pour manger, pas loin de chez soi.</p></article><article><h3>Le menu</h3><p>Les plats que vous servez déjà, présentés clairement.</p></article><article><h3>Groupes et soirs</h3><p>Une façon simple de demander une table.</p></article><article><h3>Nous trouver</h3><p>Un nom, une adresse, et un moyen de vous écrire.</p></article></div></div></section>
-  <section class="work" id="work"><div class="wrap"><h2>Le genre d'endroit que ce travail concerne</h2><div class="gallery"><figure><img src="../../images/restaurant/cafe-interior.jpg" alt="A warm room to sit down in" width="1200" height="800"><figcaption>A warm room to sit down in</figcaption></figure><figure><img src="../../images/shared/suburban-home.jpg" alt="A place in the neighbourhood" width="1200" height="800"><figcaption>A place in the neighbourhood</figcaption></figure></div></div></section>
+  <section class="work" id="work"><div class="wrap"><h2>Le genre d'endroit que ce travail concerne</h2><div class="gallery"><figure><img src="../../images/restaurant/cafe-interior.jpg" alt="Une salle chaleureuse où s'asseoir" width="1200" height="800"><figcaption>Une salle chaleureuse où s'asseoir</figcaption></figure><figure><img src="../../images/shared/suburban-home.jpg" alt="Un endroit du quartier" width="1200" height="800"><figcaption>Un endroit du quartier</figcaption></figure></div></div></section>
   <section class="area" id="area"><div class="wrap"><h2>Secteur</h2><p>Bocage Traiteur inc. est établi autour de Trois-Rivières, Québec. Cet aperçu s'adresse aux gens du secteur. Si vous couvrez déjà plus large, on peut l'ajouter à la page.</p><p>1200 rue du Fleuve Trois-Rivières (Québec) G9A 6K4</p></div></section>
   <section class="contact" id="contact"><div class="wrap"><h2>Pour nous joindre</h2><p class='line'><span>Téléphone</span> <a class="tel" href="tel:8193784070">(819) 378-4070</a></p><p class='line'><span>Courriel</span> <a href='mailto:info@bocagetraiteur.ca'>info@bocagetraiteur.ca</a></p><p class='line'><span>Adresse</span> 1200 rue du Fleuve Trois-Rivières (Québec) G9A 6K4</p><p class='line'><span>Secteur</span> Trois-Rivières, Québec et les alentours</p></div></section>
-  <footer><div class="wrap"><p class="preview-note">Ceci est un aperçu gratuit, non publié, d'une petite page préparée pour Bocage Traiteur inc. par Patrick Lemieux. Elle n'est pas en ligne. Si vous ne voulez pas d'autre message à ce sujet, dites simplement non — ça suffit. cabinet-patrick@mail.grokbot.com</p><p>© Bocage Traiteur inc.. Aperçu seulement. Les photos viennent de Pixabay (licence libre) et servent de substituts : ce ne sont pas des photos des chantiers ou du commerce lui-même.</p></div></footer>
+  <footer><div class="wrap"><div class="preview-note"><p>Ceci est un aperçu gratuit d'une petite page préparée pour Bocage Traiteur inc. par Patrick Lemieux. Ce n'est pas le site officiel. Si ça vous va, écrivez-moi ; sinon, un non suffit.</p><a class="btn-reply" href="mailto:cabinet-patrick@mail.grokbot.com?subject=Au%20sujet%20de%20l%27aper%C3%A7u%20pour%20Bocage%20Traiteur%20inc.">Écrire à Patrick — un oui ou un non suffit</a></div><p>© Bocage Traiteur inc.. Aperçu seulement. Les photos viennent de Pixabay (licence libre) et servent de substituts : ce ne sont pas des photos des chantiers ou du commerce lui-même.</p></div></footer>
 </body>
 </html>
