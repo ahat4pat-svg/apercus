@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7-day trial agent — Southern Sass Boutique (example)</title>
+<meta name="description" content="A working 7-day trial AI agent for a small business: FAQ, prices, and appointment requests. Example shop only.">
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root { --ink:#161410; --paper:#f4efe6; --accent:#8a3d4f; --chat:#fff; --them:#efe7dc; --us:#2a211c; --line:#e4dcd0; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; background:var(--paper); color:var(--ink); line-height:1.55; }
+img { max-width:100%; display:block; }
+a { color:var(--accent); }
+button, input, textarea { font: inherit; }
+.wrap { width:min(1100px, calc(100% - 36px)); margin-inline:auto; }
+.preview-banner { background:#2a211c; color:#f4efe6; font-family:"Avenir Next","Segoe UI",sans-serif; font-size:0.85rem; padding:9px 0; }
+.preview-banner .wrap { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+header { padding:18px 0; display:flex; justify-content:space-between; align-items:baseline; }
+.brand { font-weight:700; }
+.eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-family:"Avenir Next","Segoe UI",sans-serif; }
+.hero { padding:10px 0 6px; }
+h1 { font-size:clamp(1.9rem,4.5vw,3rem); line-height:1.1; margin:8px 0 14px; max-width:18ch; }
+.lede { max-width:40rem; font-size:1.08rem; }
+.layout { display:grid; grid-template-columns:1fr 1fr; gap:28px; padding:20px 0 40px; align-items:start; }
+.panel { background:#fff; border:1px solid var(--line); border-radius:6px; overflow:hidden; box-shadow:0 10px 30px rgba(22,20,16,.06); }
+.panel h2, .chat-head { margin:0; padding:14px 16px; border-bottom:1px solid #eee3d6; font-size:1rem; }
+.chat-head { background:#2a211c; color:#f4efe6; display:flex; justify-content:space-between; gap:8px; font-family:"Avenir Next","Segoe UI",sans-serif; font-size:.85rem; letter-spacing:.04em; }
+.chat-head .live { color:#c8e6c0; }
+.chat { padding:16px; background:linear-gradient(#faf7f2,#fff); height:440px; overflow:auto; display:flex; flex-direction:column; gap:10px; }
+.bub { max-width:85%; padding:10px 12px; border-radius:12px; font-size:.98rem; white-space:pre-wrap; }
+.bub.them { background:var(--them); align-self:flex-start; border-bottom-left-radius:3px; }
+.bub.us { background:var(--us); color:#f7f1ea; align-self:flex-end; border-bottom-right-radius:3px; }
+.who { display:block; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; opacity:.7; margin-bottom:4px; font-family:"Avenir Next","Segoe UI",sans-serif; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; padding:0 16px 8px; }
+.chips button, .composer button, .btn { font-family:"Avenir Next","Segoe UI",sans-serif; font-size:.82rem; border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:999px; padding:6px 12px; cursor:pointer; min-height:36px; }
+.chips button:hover, .composer button:hover { border-color:var(--accent); color:var(--accent); }
+.composer { display:flex; gap:8px; padding:8px 16px 16px; border-top:1px solid #f0e8dc; }
+.composer input { flex:1; border:1px solid var(--line); border-radius:6px; padding:10px 12px; min-height:44px; background:#fff; }
+.composer button.send { background:var(--accent); color:#fff; border-color:var(--accent); border-radius:6px; padding:10px 16px; }
+.facts { padding:16px; }
+.facts dl { margin:0; }
+.facts dt { font-family:"Avenir Next","Segoe UI",sans-serif; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:#665; margin:12px 0 2px; }
+.facts dt:first-child { margin-top:0; }
+.facts dd { margin:0; }
+.note { font-size:.85rem; color:#665; padding:0 16px 16px; }
+.preview-note { background:#efe4d6; border-left:3px solid var(--accent); padding:12px 14px; margin:0 0 18px; }
+.prices { padding:24px 0 70px; border-top:1px solid var(--line); }
+.prices h2 { font-size:1.8rem; }
+.pack { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px; }
+.pack article { background:#fff; border:1px solid var(--line); padding:16px; border-radius:4px; }
+.pack h3 { margin:0 0 6px; }
+.pack .sum { font-size:1.35rem; margin:0 0 8px; }
+.inbox { margin-top:16px; padding:16px; background:#fff; border:1px dashed var(--line); border-radius:6px; font-size:.92rem; }
+.inbox h3 { margin:0 0 8px; font-size:1rem; }
+.inbox ol { margin:0; padding-left:1.2rem; }
+.inbox li { margin:0 0 8px; }
+.muted { color:#665; }
+footer { padding:0 0 48px; font-size:.88rem; color:#665; }
+@media (max-width:800px){ .layout,.pack { grid-template-columns:1fr; } h1{max-width:none;} .chat{height:380px;} }
+</style>
+</head>
+<body>
+<div class="preview-banner">
+  <div class="wrap">
+    <span>7-day trial agent · example business · prepared by Patrick Lemieux</span>
+    <span id="trial-clock">Trial clock starts when the page opens</span>
+  </div>
+</div>
+<div class="wrap">
+  <header>
+    <div class="brand">Southern Sass Boutique</div>
+    <div class="eyebrow">Holdenville, OK · example</div>
+  </header>
+  <div class="hero">
+    <p class="eyebrow">A working trial, not a scripted video</p>
+    <h1>Ask it anything the shop would answer.</h1>
+    <p class="lede">This agent knows the hours, the menu and the prices, and it can take an appointment request for the desk. Try it on the right — it answers you, it does not play a pre-written chat.</p>
+  </div>
+  <div class="preview-note">
+    <strong>7-day trial.</strong> This agent was prepared for Southern Sass Boutique from that business’s hours, services and policies. Booking requests are shown on this page for the desk. Prepared by Patrick Lemieux —
+    <a href="mailto:cabinet-patrick@mail.grokbot.com">cabinet-patrick@mail.grokbot.com</a>.
+  </div>
+  <div class="layout">
+    <div class="panel">
+      <h2>The shop (sample)</h2>
+      <div class="facts" id="facts"></div>
+      <p class="note">On a live trial, a small chat button like the one on the right can sit on the business’s existing website.</p>
+    </div>
+    <div class="panel">
+      <div class="chat-head">
+        <span>Southern Sass Boutique assistant</span>
+        <span class="live" id="mode-label">Live · answers on this page</span>
+      </div>
+      <div class="chat" id="chat" aria-live="polite"></div>
+      <div class="chips" id="chips"></div>
+      <form class="composer" id="form" autocomplete="off">
+        <input id="input" type="text" enterkeyhint="send" placeholder="Ask about hours, prices, or book…" aria-label="Your message">
+        <button class="send" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="inbox" id="inbox-box">
+    <h3>What the desk would receive</h3>
+    <p class="muted" id="inbox-empty">No appointment requests or messages yet. Book something in the chat to see a request appear here. In a live trial, this is emailed to the owner (free form endpoint, or a Cloudflare Worker), not only shown on this page.</p>
+    <ol id="inbox-list" hidden></ol>
+  </div>
+
+  <section class="prices">
+    <h2>If the trial earns its keep</h2>
+    <p class="lede">Prices are shown after you’ve tried the agent, the same way as the earlier specialized-agent previews. Nothing is charged to run this trial.</p>
+    <div class="pack">
+      <article>
+        <h3>Keep the agent</h3>
+        <p class="sum">$100 USD</p>
+        <p>Setup for your business: your hours, services, policies, and appointment requests sent to you. The 7-day trial is the proof.</p>
+      </article>
+      <article>
+        <h3>Agent + light follow-up</h3>
+        <p class="sum">$400 USD</p>
+        <p>The same agent, plus a week of adjustments after you see how customers use it.</p>
+      </article>
+      <article>
+        <h3>A first look only</h3>
+        <p class="sum">$35 USD</p>
+        <p>A smaller, single-purpose version (quotes or bookings) if you only want one job done.</p>
+      </article>
+    </div>
+    <p class="note" style="padding:16px 0 0;">These figures match the unpublished English agent previews already prepared. They are an offer, not a promise that someone will buy.</p>
+  </section>
+  <footer>
+    <p>A 7-day trial agent prepared by Patrick Lemieux — <a href="mailto:cabinet-patrick@mail.grokbot.com">cabinet-patrick@mail.grokbot.com</a>. This page is a working 7-day trial for Southern Sass Boutique, hosted at no cost on GitHub Pages.</p>
+  </footer>
+</div>
+<script src="kb.js"></script>
+<script src="agent.js"></script>
+<script>
+(function () {
+  var kb = window.AGENT_KB;
+  var agent = new window.SalonAgent(kb);
+  var chat = document.getElementById("chat");
+  var chipsEl = document.getElementById("chips");
+  var form = document.getElementById("form");
+  var input = document.getElementById("input");
+  var facts = document.getElementById("facts");
+  var inboxList = document.getElementById("inbox-list");
+  var inboxEmpty = document.getElementById("inbox-empty");
+
+  facts.innerHTML =
+    "<dl>" +
+    "<dt>Hours</dt><dd>" + kb.hours.summary + "</dd>" +
+    "<dt>Address</dt><dd>" + kb.address + "</dd>" +
+    "<dt>Phone</dt><dd>" + kb.phone + "</dd>" +
+    "<dt>Services</dt><dd>" + kb.services.map(function (s) { return s.name + " · " + s.price; }).join("<br>") + "</dd>" +
+    "</dl>";
+
+  var startKey = "trial-start-southern-sass-boutique";
+  var started = localStorage.getItem(startKey);
+  if (!started) {
+    started = new Date().toISOString();
+    localStorage.setItem(startKey, started);
+  }
+  var ends = new Date(new Date(started).getTime() + 7 * 86400000);
+  function tick() {
+    var ms = ends.getTime() - Date.now();
+    var el = document.getElementById("trial-clock");
+    if (ms <= 0) { el.textContent = "Trial window (7 days) has ended on this browser"; return; }
+    var d = Math.floor(ms / 86400000);
+    var h = Math.floor((ms % 86400000) / 3600000);
+    el.textContent = "This browser's trial ends in " + d + "d " + h + "h  ·  " + ends.toLocaleString("en-CA", { timeZone: "America/Toronto" }) + " (heure de l'Est)";
+  }
+  tick();
+  setInterval(tick, 60000);
+
+  function addBub(role, text) {
+    var div = document.createElement("div");
+    div.className = "bub " + (role === "user" ? "us" : "them");
+    var who = document.createElement("span");
+    who.className = "who";
+    who.textContent = role === "user" ? "You" : "Assistant";
+    div.appendChild(who);
+    div.appendChild(document.createTextNode(text));
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  function setChips(list) {
+    chipsEl.innerHTML = "";
+    (list || []).forEach(function (c) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = c;
+      b.addEventListener("click", function () { send(c); });
+      chipsEl.appendChild(b);
+    });
+  }
+
+  function renderInbox() {
+    if (!agent.inbox.length) return;
+    inboxEmpty.hidden = true;
+    inboxList.hidden = false;
+    inboxList.innerHTML = "";
+    agent.inbox.forEach(function (item) {
+      var li = document.createElement("li");
+      if (item.type === "appointment_request") {
+        li.textContent = item.id + " · " + item.name + " · " + item.service + " · " + item.day + " at " + item.time + " · " + (item.phone || item.email);
+      } else {
+        li.textContent = item.id + " · message · " + item.body + " · " + (item.phone || item.email);
+      }
+      inboxList.appendChild(li);
+    });
+  }
+
+  function send(text) {
+    text = String(text || "").trim();
+    if (!text) return;
+    addBub("user", text);
+    setChips([]);
+    input.value = "";
+    agent.reply(text).then(function (res) {
+      addBub("assistant", res.text);
+      setChips(res.chips);
+      if (res.inboxItem) renderInbox();
+    });
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    send(input.value);
+  });
+
+  addBub("assistant", kb.greeting);
+  setChips(["Book an appointment", "Hours", "Services & prices"]);
+  input.focus();
+})();
+</script>
+</body>
+</html>
