@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appointment agent for salons — demo</title>
+<meta name="description" content="Unpublished demo of a specialized AI agent. Preview first, price after.">
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root { --ink:#161410; --paper:#f4efe6; --accent:#8a3d4f; --chat:#fff; --them:#efe7dc; --us:#2a211c; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; background:var(--paper); color:var(--ink); line-height:1.55; }
+img { max-width:100%; display:block; }
+a { color:var(--accent); }
+.wrap { width:min(1100px, calc(100% - 36px)); margin-inline:auto; }
+header { padding:18px 0; display:flex; justify-content:space-between; align-items:baseline; }
+.brand { font-weight:700; }
+.eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-family:"Avenir Next","Segoe UI",sans-serif; }
+.hero { padding:28px 0 10px; }
+h1 { font-size:clamp(1.9rem,4.5vw,3rem); line-height:1.1; margin:8px 0 14px; max-width:18ch; }
+.lede { max-width:38rem; font-size:1.08rem; }
+.layout { display:grid; grid-template-columns:1fr 1fr; gap:28px; padding:20px 0 40px; align-items:start; }
+.panel { background:#fff; border:1px solid #e4dcd0; border-radius:6px; overflow:hidden; box-shadow:0 10px 30px rgba(22,20,16,.06); }
+.panel h2, .chat-head { margin:0; padding:14px 16px; border-bottom:1px solid #eee3d6; font-size:1rem; }
+.chat-head { background:#2a211c; color:#f4efe6; display:flex; justify-content:space-between; font-family:"Avenir Next","Segoe UI",sans-serif; font-size:.85rem; letter-spacing:.04em; }
+.chat { padding:16px; background:linear-gradient(#faf7f2,#fff); min-height:420px; display:flex; flex-direction:column; gap:10px; }
+.bub { max-width:85%; padding:10px 12px; border-radius:12px; font-size:.98rem; }
+.bub.them { background:var(--them); align-self:flex-start; border-bottom-left-radius:3px; }
+.bub.us { background:var(--us); color:#f7f1ea; align-self:flex-end; border-bottom-right-radius:3px; }
+.who { display:block; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; opacity:.7; margin-bottom:4px; font-family:"Avenir Next","Segoe UI",sans-serif; }
+.note { font-size:.85rem; color:#665; padding:0 16px 16px; }
+.do { padding:8px 16px 22px; }
+.do ul { margin:8px 0 0; padding-left:1.1rem; }
+.do li { margin:0 0 6px; }
+.hero-photo { width:100%; height:220px; object-fit:cover; }
+.prices { padding:48px 0 70px; border-top:1px solid #e4dcd0; }
+.prices h2 { font-size:1.8rem; }
+.pack { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px; }
+.pack article { background:#fff; border:1px solid #e4dcd0; padding:16px; border-radius:4px; }
+.pack h3 { margin:0 0 6px; }
+.pack .sum { font-size:1.35rem; margin:0 0 8px; }
+.disclaimer { font-size:.88rem; color:#665; max-width:42rem; }
+footer { padding:0 0 48px; font-size:.88rem; color:#665; }
+.preview-note { background:#efe4d6; border-left:3px solid var(--accent); padding:12px 14px; }
+@media (max-width:800px){ .layout,.pack { grid-template-columns:1fr; } h1{max-width:none;} }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Specialized agent demo</div>
+      <div class="eyebrow">Preview — not published</div>
+    </header>
+    <section class="hero">
+      <p class="eyebrow">For salons and stylists</p>
+      <h1>An agent that takes the booking request, then lets you confirm the chair.</h1>
+      <p class="lede">Clients often write after hours. This agent collects the service, a preferred time, and a name and number, then holds the request until you confirm. The conversation on the right is a sample. Prices come after, if you want to see them.</p>
+    </section>
+    <div class="layout">
+      <div class="panel">
+        <img class="hero-photo" src="../../images/shared/suburban-home.jpg" alt="A well-kept local street — the kind of place a neighbourhood salon serves">
+        <div class="do">
+          <h2>What this agent does</h2>
+          <ul><li>Answers booking messages when the front desk is busy or closed.</li>
+<li>Collects the service, a preferred time, and a way to reach the client.</li>
+<li>Treats the slot as a request until a person at the salon confirms it.</li>
+<li>Can be pointed at SMS, Instagram, or email — one channel in the dedicated setup.</li></ul>
+          <p>It has one job. It does not pretend to run the whole company, and it is honest when it cannot verify something.</p>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="chat-head"><span>Instagram or SMS inquiry</span><span>Sample only</span></div>
+        <div class="chat"><div class="bub them"><span class="who">Client</span>Hi, do you have anything on Saturday for a cut and colour? Ideally late morning.</div>
+<div class="bub us"><span class="who">Agent</span>I can take the request for the salon. Saturday late morning is noted. Is this for you, and is it a cut and full colour, or a cut and a refresh / toner?</div>
+<div class="bub them"><span class="who">Client</span>It’s for me — Maya. Cut and a root refresh, shoulder-length hair. I’ve been in once before, around the summer.</div>
+<div class="bub us"><span class="who">Agent</span>Thanks, Maya. What’s the best number to reach you on, and would 10:30 or 11:30 Saturday both work if the stylist can do one of those?</div>
+<div class="bub them"><span class="who">Client</span>11:30 is better. 555-0148.</div>
+<div class="bub us"><span class="who">Agent</span>I’ve sent 11:30 Saturday, cut and root refresh, for Maya at that number, to the salon to confirm. This is a request, not a locked booking, until a stylist says yes. You’ll get a short confirmation once they do. If Saturday is already full, they’ll offer the next opening.</div></div>
+        <p class="note">This is a scripted sample conversation, written to show the tone and the questions — not a live inbox, and not a real customer.</p>
+      </div>
+    </div>
+    <section class="prices" id="pricing">
+      <h2>If you want one like this</h2>
+      <p class="disclaimer">The conversation above is the preview. The prices sit here so you can see them after, not first. These are setup fees in US dollars, matching Patrick Lemieux’s dedicated-agent offer (also listed on Fiverr as “I will set up a dedicated AI agent for you”). Hosting and model usage stay in your name. No subscription is sold as part of the setup fee.</p>
+      <div class="pack">
+        <article>
+          <h3>Starter</h3>
+          <p class="sum">$35 USD</p>
+          <p>Your first agent and one routine, set up on an account or plan you already have. If that plan cannot run it, you are told so before any work starts.</p>
+        </article>
+        <article>
+          <h3>Dedicated</h3>
+          <p class="sum">$100 USD</p>
+          <p>An always-on agent on a VPS you own, one messaging channel, a basic auto-restart, and a short handover. You keep the server, the files, and your keys.</p>
+        </article>
+        <article>
+          <h3>Custom</h3>
+          <p class="sum">$400 USD</p>
+          <p>The dedicated setup, plus one or two concrete jobs — follow-ups, a weekly report, or simple inbox rules — written so the agent says what it could not verify.</p>
+        </article>
+      </div>
+    </section>
+    <footer>
+      <p class="preview-note">This page is a free, unpublished demo prepared by Patrick Lemieux. It is not live. If you do not want one, just say no — that is enough. cabinet-patrick@mail.grokbot.com</p>
+      <p>Photographs are from Pixabay (free license) and are placeholders. Nothing on this page has been published to GitHub Pages or anywhere else.</p>
+    </footer>
+  </div>
+</body>
+</html>
