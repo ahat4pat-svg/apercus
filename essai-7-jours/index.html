@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Essayez-le à nos frais pendant une semaine — Patrick Lemieux</title>
+<meta name="description" content="Votre assistant IA sur mesure : il répond à vos clients, prépare vos soumissions, trie vos courriels et suit vos dossiers pendant que vous faites votre vrai travail. Essai d’une semaine, à nos frais.">
+<link rel="canonical" href="https://ahat4pat-svg.github.io/apercus/essai-7-jours/">
+<meta property="og:title" content="Votre assistant IA sur mesure — essayez-le à nos frais pendant une semaine">
+<meta property="og:description" content="Il répond à vos clients, prépare vos soumissions, trie vos courriels et suit vos dossiers pendant que vous faites votre vrai travail.">
+<meta property="og:url" content="https://ahat4pat-svg.github.io/apercus/essai-7-jours/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CA">
+<meta name="twitter:card" content="summary">
+<style>
+:root {
+  --ink: #161410;
+  --paper: #f4efe6;
+  --accent: #8a3d4f;
+  --accent-dark: #6e2f3e;
+  --line: #e4dcd0;
+  --muted: #5c564e;
+  --white: #fff;
+  --sans: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--serif);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+}
+a { color: var(--accent); }
+.wrap { width: min(36rem, calc(100% - 32px)); margin-inline: auto; }
+header {
+  padding: 22px 0 8px;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.hero { padding: 8px 0 8px; }
+h1 {
+  font-size: clamp(1.7rem, 6.2vw, 2.35rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 22px;
+}
+.points {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.points li {
+  position: relative;
+  padding: 10px 12px 10px 36px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 1.05rem;
+}
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 1.05em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.closing {
+  margin: 0 0 28px;
+  font-size: 1.12rem;
+  color: var(--ink);
+}
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px 18px 22px;
+  box-shadow: 0 10px 30px rgba(22, 20, 16, 0.06);
+}
+.card h2 {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-weight: 600;
+}
+label.field {
+  display: block;
+  margin: 0 0 14px;
+}
+label.field span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.hint {
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font: 1rem/1.4 var(--serif);
+  background: var(--white);
+  color: var(--ink);
+}
+input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+.choices {
+  display: grid;
+  gap: 8px;
+}
+.choices label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #faf7f2;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.choices label:has(input:checked) {
+  border-color: var(--accent);
+  background: #f8ecee;
+}
+.choices input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  flex: 0 0 auto;
+}
+#autre-ligne { display: none; margin-top: 8px; }
+#autre-ligne.visible { display: block; }
+.honey {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 650;
+  cursor: pointer;
+  padding: 14px 16px;
+}
+button[type="submit"]:hover { background: var(--accent-dark); }
+button[type="submit"]:disabled { opacity: 0.7; cursor: wait; }
+.or-mail {
+  margin: 14px 0 0;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.ok, .err {
+  display: none;
+  border-radius: 10px;
+  padding: 22px 18px;
+  margin: 0 0 28px;
+}
+.ok { background: #eef6ea; border: 1px solid #c8e6c0; }
+.err { background: #f8ecee; border: 1px solid #e4c4cb; }
+.ok h2, .err h2 { font-size: 1.4rem; margin: 0 0 8px; }
+body.merci .card, body.merci .hero .for-form { display: none; }
+body.merci .ok { display: block; }
+footer {
+  padding: 28px 0 48px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+footer p { margin: 0; }
+@media (max-width: 420px) {
+  .wrap { width: calc(100% - 24px); }
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>Patrick Lemieux</header>
+
+    <div class="hero">
+      <h1>Votre assistant IA sur mesure — essayez-le à nos frais pendant une semaine.</h1>
+      <div class="for-form">
+        <ul class="points">
+          <li>Il répond à vos clients</li>
+          <li>Il prépare vos soumissions</li>
+          <li>Il trie vos courriels</li>
+          <li>Il suit vos dossiers</li>
+        </ul>
+        <p class="closing">…pendant que vous faites votre vrai travail.</p>
+      </div>
+    </div>
+
+    <div class="ok" id="ok" role="status">
+      <h2>C’est reçu.</h2>
+      <p>Je vous écris sous peu pour installer votre essai d’une semaine, à nos frais.</p>
+      <p>Patrick Lemieux</p>
+    </div>
+
+    <div class="err" id="err" role="alert">
+      <h2>L’envoi n’est pas passé.</h2>
+      <p>Aucun souci : utilisez le bouton ci-dessous, ça ouvre un courriel déjà rempli.</p>
+      <p><a id="mailto-fallback" href="mailto:cabinet-patrick@mail.grokbot.com">M’écrire directement</a></p>
+    </div>
+
+    <form class="card" id="form" action="https://formsubmit.co/cabinet-patrick@mail.grokbot.com" method="POST" accept-charset="UTF-8">
+      <h2>Demander l’essai de 7 jours</h2>
+
+      <input type="hidden" name="_subject" value="Demande d’essai 7 jours — à nos frais">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://ahat4pat-svg.github.io/apercus/essai-7-jours/merci.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_honey" value="">
+      <input type="text" name="_gotcha" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <label class="field">
+        <span>Prénom et nom</span>
+        <input type="text" name="nom" autocomplete="name" required>
+      </label>
+
+      <label class="field">
+        <span>Nom du commerce / site web</span>
+        <input type="text" name="commerce" autocomplete="organization" required placeholder="Votre commerce ou l’adresse de votre site">
+      </label>
+
+      <label class="field">
+        <span>Courriel</span>
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
+
+      <fieldset class="field" style="border:0;padding:0;margin:0 0 14px;">
+        <legend style="font-family:var(--sans);font-size:.86rem;font-weight:600;margin-bottom:8px;">Ce qui vous gruge le plus de temps en ce moment</legend>
+        <div class="choices">
+          <label><input type="radio" name="temps" value="Répondre à mes clients" required> Répondre à mes clients</label>
+          <label><input type="radio" name="temps" value="Préparer mes soumissions"> Préparer mes soumissions</label>
+          <label><input type="radio" name="temps" value="Trier mes courriels"> Trier mes courriels</label>
+          <label><input type="radio" name="temps" value="Suivre mes dossiers"> Suivre mes dossiers</label>
+          <label><input type="radio" name="temps" value="Autre" id="choix-autre"> Autre</label>
+        </div>
+        <input type="text" name="temps_precision" id="autre-ligne" placeholder="Dites-le en une courte ligne" autocomplete="off">
+      </fieldset>
+
+      <label class="field">
+        <span>Téléphone <span class="hint">(optionnel)</span></span>
+        <input type="tel" name="telephone" autocomplete="tel">
+      </label>
+
+      <button type="submit" id="submit">Demander mon essai de 7 jours</button>
+      <p class="or-mail">Ou écrivez-moi : <a href="mailto:cabinet-patrick@mail.grokbot.com?subject=Demande%20d%E2%80%99essai%207%20jours">cabinet-patrick@mail.grokbot.com</a></p>
+    </form>
+
+    <footer>
+      <p>Patrick Lemieux — Trois-Rivières. L’essai d’une semaine est à nos frais. Aucun paiement pour faire la demande.</p>
+    </footer>
+  </div>
+<script>
+(function () {
+  function showMerci() {
+    document.body.classList.add("merci");
+    var ok = document.getElementById("ok");
+    ok.style.display = "block";
+    ok.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  if (location.hash === "#merci") showMerci();
+
+  var autre = document.getElementById("choix-autre");
+  var ligne = document.getElementById("autre-ligne");
+  var radios = document.querySelectorAll('input[name="temps"]');
+  function toggleAutre() {
+    var on = autre.checked;
+    ligne.classList.toggle("visible", on);
+    ligne.required = on;
+    if (!on) ligne.value = "";
+  }
+  radios.forEach(function (r) { r.addEventListener("change", toggleAutre); });
+  toggleAutre();
+
+  var form = document.getElementById("form");
+  var submit = document.getElementById("submit");
+  var err = document.getElementById("err");
+  var mail = document.getElementById("mailto-fallback");
+
+  function mailtoFromForm() {
+    var d = new FormData(form);
+    var body = [
+      "Nom : " + (d.get("nom") || ""),
+      "Commerce / site : " + (d.get("commerce") || ""),
+      "Courriel : " + (d.get("email") || ""),
+      "Ce qui gruge le plus : " + (d.get("temps") || "") + (d.get("temps_precision") ? " — " + d.get("temps_precision") : ""),
+      "Téléphone : " + (d.get("telephone") || "")
+    ].join("\n");
+    return "mailto:cabinet-patrick@mail.grokbot.com?subject=" +
+      encodeURIComponent("Demande d’essai 7 jours — à nos frais") +
+      "&body=" + encodeURIComponent(body);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    submit.disabled = true;
+    submit.textContent = "Envoi en cours…";
+    err.style.display = "none";
+    var payload = {
+      _subject: "Demande d’essai 7 jours — à nos frais",
+      _template: "table",
+      _captcha: "false",
+      nom: form.nom.value,
+      commerce: form.commerce.value,
+      email: form.email.value,
+      temps: form.temps.value,
+      temps_precision: form.temps_precision.value,
+      telephone: form.telephone.value
+    };
+    fetch("https://formsubmit.co/ajax/cabinet-patrick@mail.grokbot.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+      .then(function (result) {
+        if (result.ok && result.data && (result.data.success === "true" || result.data.success === true)) {
+          showMerci();
+          form.reset();
+          toggleAutre();
+        } else {
+          throw new Error("submit-failed");
+        }
+      })
+      .catch(function () {
+        mail.href = mailtoFromForm();
+        err.style.display = "block";
+        err.scrollIntoView({ behavior: "smooth", block: "start" });
+      })
+      .finally(function () {
+        submit.disabled = false;
+        submit.textContent = "Demander mon essai de 7 jours";
+      });
+  });
+})();
+</script>
+</body>
+</html>
